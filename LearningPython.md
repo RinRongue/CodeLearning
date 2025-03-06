@@ -70,8 +70,25 @@ str.center(width[,fillchar]) #在width宽度中居中，两侧用fillchar填充
 ```
 # 数据运算
 ```python
-pow(x,y) #x^y
+abs(x) #绝对值
+pow(x,y[,z]) #x^y%z
+round(x[,d]) #四舍五入，取d位小数
+divmod(10,3) > (3,1) #商余
+max（a,b,c,...,n)  #返回最大的数
+min（a,b,c,...,n)
+
+#可以将字符串转为数字
+int(x) #小数取证
+float(x) #转换为浮点数
+complex(x) #转为复数 complex(1) > 1+0j
+int("1010", 2)  # 二进制 "1010" 转为 10
+int("1F", 16)    # 十六进制 "1F" 转为 31
+eval()
+
+#将数字转为字符串
+str()
 ```
+
 # 循环
 ## if loop
 ```python
@@ -116,7 +133,7 @@ return factor
 ```
 # 官方库
 
-# time库
+## time库
 
 ## turtle库
 ```python
