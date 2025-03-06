@@ -134,6 +134,22 @@ return factor
 # 官方库
 
 ## time库
+```python
+#获取时间
+time.time() #获取当前float值的时间戳
+time.ctime() #易读的当前时间 'Fri Jan 26 12:11:16 2018'
+time.gmtime() #计算机可读 time.struct_time(tm_year=2025, tm_mon=3, tm_mday=6, tm_hour=12, tm_min=9, tm_sec=1, tm_wday=3, tm_yday=65, tm_isdst=0)
+
+#格式化时间
+time.strftime(tpl,ts) #tpl:格式化模板字符串 ts:计算机内部时间变量类型 time.strftime('%Y-%m-%d %H:%M:%S',time.gmtime())
+time.strptime(str.tpl) #把时间变成计算机可读 a='12:11:16 2018' time.strptime(a,'%H:%M:%S %Y')
+                > time.struct_time(tm_year=2018, tm_mon=1, tm_mday=1, tm_hour=12, tm_min=11, tm_sec=16, tm_wday=0, tm_yday=1, tm_isdst=-1)
+
+#程序计时
+time.sleep()
+time.perf_counter()
+```
+
 
 ## turtle库
 ```python
