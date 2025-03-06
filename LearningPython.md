@@ -12,6 +12,13 @@
 \n #换行
 \r #回车
 ```
+## 字符串格式化
+槽{}  
+![](string0.png)
+```python
+
+```
+
 ## 字符串操作符
 ```python
 x+y #连接xy
@@ -19,7 +26,31 @@ x*n ; n*x #复制n次x
 x in s #判断x是否为s子串，返回布尔值
 ```
 ## 字符串处理函数
+```python
+len(x) #返回x长度
 
+str(x) #将任意内容x变成字符串
+eval(x) #将字符串x变成语句
+
+chr(x) #unicode转字符
+ord(x) #字符转unicode (0x10FFFF)
+
+hex(x) #十进制整数转16进制字符串
+oct(x) #十进制整数转8进制字符串
+```
+## 字符串处理方法
+```python
+#str用于表示字符串
+str.lower() #str小写 'AbC' > 'abc'
+str.upper() #str大写
+
+str.split(sep=None) #按照sep分隔str 'A,BC:D'.split(':') >['A,BC','D']
+str.count(sub) #返回str出现sub的次数
+str.replace(old,new) #'ABC'.replace('A','a') > 'aBC'
+str.strip(chars) #去除两侧的chars列出的字符 'ABCDCDCBA'.strip('ABC') > 'DCD'
+str.join(iter) #在str除最后一个元素外每个元素后加一个iter，用于分隔 'abc'.join('+') > 'a+b+c'
+str.center(width[,fillchar]) #在width宽度中居中，两侧用fillchar填充
+```
 # 数据运算
 ```python
 pow(x,y) #x^y
@@ -49,8 +80,15 @@ match a:
 ```
 # for loop
 ` for i in range(): `
+```python
+for :
+  print(a,end="") #每次输出后不换行
+```
 
 # while loop
+
+# try-except
+
 
 
 # 自定义函数
@@ -79,6 +117,5 @@ turtle.left(angle) #往左转
 turtle.right(angle)  
 turtle.done()
 ```
-![](/PythonDCIM/turtle1.png)
 ![](/PythonDCIM/turtle0.jpg)
 
