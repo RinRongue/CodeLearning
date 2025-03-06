@@ -146,10 +146,10 @@ time.strptime(str.tpl) #把时间变成计算机可读 a='12:11:16 2018' time.st
                 > time.struct_time(tm_year=2018, tm_mon=1, tm_mday=1, tm_hour=12, tm_min=11, tm_sec=16, tm_wday=0, tm_yday=1, tm_isdst=-1)
 
 #程序计时
-time.sleep()
-time.perf_counter()
+time.sleep(a) #程序睡觉a秒
+time.perf_counter() #返回CPU级别的精确时间计数值（单位秒），常连续调用计算差值
 ```
-
+![时间格式化字符串](/PythonDCIM/time0.jpg)
 
 ## turtle库
 ```python
