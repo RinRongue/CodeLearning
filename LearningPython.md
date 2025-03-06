@@ -14,7 +14,7 @@
 ```
 ## 字符串格式化
 槽{}  
-填充，对齐，宽度 'This is {0:+^10}'.format('PYTHON') >'This is ++PYTHON++'   
+填充，对齐，宽度 `'This is {0:+^10}'.format('PYTHON') >'This is ++PYTHON++'`  
 > <左对齐 \>右对齐 ^居中对齐
 
 数字处理 
@@ -35,6 +35,7 @@ print("{:%}".format(3.14)) > 314.000000%
 ```
 ![](/PythonDCIM/string0.png)
 ![](/PythonDCIM/string1.png)
+![](/PythonDCIM/string2.png)
 ## 字符串操作符
 ```python
 x+y #连接xy
