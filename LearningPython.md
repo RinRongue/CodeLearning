@@ -106,11 +106,11 @@ if a is/not is []: #用于比较对象是否是同一个（内存地址 是否�
 ### match-case
 ```python
 match a:
-  case 1:
-    b
-  case 2:
-    c
-#用于模式匹配
+  case b:
+    ...
+  case c:
+    ...
+#用于模式匹配 a与b,c的关系
 ```
 # for loop
 ` for i in range(): `
