@@ -14,11 +14,11 @@
 ```
 ## 字符串格式化
 槽{}  
-![](string0.png)
+![](/PythonDCIM/string0.png
 ```python
 
 ```
-
+![](/PythonDCIM/string1.png
 ## 字符串操作符
 ```python
 x+y #连接xy
