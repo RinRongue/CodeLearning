@@ -14,11 +14,27 @@
 ```
 ## 字符串格式化
 槽{}  
-![](/PythonDCIM/string0.png
-```python
+填充，对齐，宽度 'This is {0:+^10}'.format('PYTHON') >'This is ++PYTHON++'   
+> <左对齐 \>右对齐 ^居中对齐
 
+数字处理 
+```python
+a=1234.1234 ; print(f'{a:,.3f}') > 1,234.123
+#整数类型
+print("{:b}".format(999)) > 1111100111
+print("{:c}".format(999)) > ϧ
+print("{:d}".format(999)) > 999
+print("{:o}".format(999)) > 1747
+print("{:x}".format(999)) > 3e7
+print("{:X}".format(999)) > 3E7
+#浮点数
+print("{:e}".format(3.14)) > 3.140000e+00
+print("{:E}".format(3.14)) > 3.140000E+00
+print("{:f}".format(3.14)) > 3.140000
+print("{:%}".format(3.14)) > 314.000000%
 ```
-![](/PythonDCIM/string1.png
+![](/PythonDCIM/string0.png)
+![](/PythonDCIM/string1.png)
 ## 字符串操作符
 ```python
 x+y #连接xy
