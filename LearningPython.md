@@ -177,3 +177,17 @@ turtle.done()
 ```
 ![](/PythonDCIM/turtle0.jpg)
 
+## secrets库
+```python
+# 生成一个随机整数
+random_int = secrets.randbelow(10)  # 生成 0 到 9 之间的随机整数
+
+# 生成一个随机字节串
+random_bytes = secrets.token_bytes(16)  # 生成 16 字节的随机字节串
+
+# 生成一个随机十六进制字符串
+random_hex = secrets.token_hex(16)  # 生成 16 字节的随机十六进制字符串
+
+# 生成一个随机URL安全字符串
+random_urlsafe = secrets.token_urlsafe(16)
+```
