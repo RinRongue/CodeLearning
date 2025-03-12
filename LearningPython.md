@@ -96,7 +96,15 @@ if a:
 elif b:
 else:
 ```
-`if a else b #单行if`
+```mermaid
+graph TD
+    A[开始] --> B{判断};
+    B -- 是 --> C[语句块1];
+    B -- 否 --> D[语句块2];
+    C --> E[结束];
+    D --> E
+```
+`<表达式1> if <条件> else <表达式2> #紧凑形式`
 
 ```python
 if a in []:
