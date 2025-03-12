@@ -1,9 +1,23 @@
-[TOC]
--   [字符串](#字符串)
-    -   [索引和切片](#索引和切片)
-    -   [转义符](#转义符)
-    -   [字符串格式化](#字符串格式化)
-    -   [字符串操作符](#字符串操作符)
+- [字符串](#字符串)
+  - [索引和切片](#索引和切片)
+  - [转义符](#转义符)
+  - [字符串格式化](#字符串格式化)
+  - [字符串操作符](#字符串操作符)
+  - [字符串处理函数](#字符串处理函数)
+  - [字符串处理方法](#字符串处理方法)
+- [数据运算](#数据运算)
+- [循环结构](#循环结构)
+  - [if loop](#if-loop)
+    - [match-case](#match-case)
+  - [for loop](#for-loop)
+  - [while loop](#while-loop)
+  - [try-except](#try-except)
+- [自定义函数](#自定义函数)
+- [官方库](#官方库)
+  - [time库](#time库)
+  - [turtle库](#turtle库)
+  - [secrets库](#secrets库)
+     
 
 # 字符串
 使用' '或" "
@@ -96,8 +110,8 @@ eval()
 str()
 ```
 
-# 分支结构
-## if loop
+# 循环结构
+## if-loop
 ```python
 if a:
 elif b:
@@ -127,16 +141,16 @@ match a:
     ...
 #用于模式匹配 a与b,c的关系
 ```
-# for loop
+## for-loop
 ` for i in range(): `
 ```python
 for :
   print(a,end="") #每次输出后不换行
 ```
 
-# while loop
+## while-loop
 
-# try-except
+## try-except
 
 
 
