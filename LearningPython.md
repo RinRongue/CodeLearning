@@ -1,4 +1,4 @@
-- [输入，定义](#输入，定义)
+- [输入,定义,输出](#输入,定义,输出)
 - [字符串](#字符串)
   - [索引和切片](#索引和切片)
   - [转义符](#转义符)
@@ -7,11 +7,11 @@
   - [字符串处理函数](#字符串处理函数)
   - [字符串处理方法](#字符串处理方法)
 - [数据运算](#数据运算)
-- [循环结构](#循环结构)
+- [循环和分支结构](#循环和分支结构)
   - [if loop](#if-loop)
     - [match-case](#match-case)
-  - [for loop](#for-loop)
-  - [while loop](#while-loop)
+  - [for loop](#for-loop 遍历循环)
+  - [while loop](#while-loop 无限循环)
   - [try-except](#try-except)
 - [自定义函数](#自定义函数)
 - [官方库](#官方库)
@@ -20,11 +20,13 @@
   - [secrets库](#secrets库)
      
 
-# 输入，定义
+# 输入,定义,输出
 `a, b = input('请输入两个值，用逗号分隔：') #一次输入多个值并用逗号分隔`  
 `a, b = input("请输入两个值，用空格分隔: ").split() #一次输入多个值并用空格分隔`  
 `x, y = map(int, input("请输入两个整数: ").split()) #一次输入多个值并用空格分隔且格式化为整数`  
 `a, b = '','' #一次定义多个数值`  
+`print('',end='') #输出完后不换行`
+`print('\r',end='') #覆盖上次的输出`
 # 字符串
 使用' '或" "
 使用''' '''创建多行字符串
@@ -116,7 +118,7 @@ eval()
 str()
 ```
 
-# 循环结构
+# 循环和分支结构
 ## if-loop
 ```python
 if a:
@@ -147,15 +149,25 @@ match a:
     ...
 #用于模式匹配 a与b,c的关系
 ```
-## for-loop
-` for i in range(): `
+## for-loop 遍历循环
 ```python
-for :
-  print(a,end="") #每次输出后不换行
+#计数循环
+for i in range(M,N,K): #从M到N-1，以K为步长
+    <>
+```
+```python
+for c in s:  #字符串循环，遍历字符串中每一个字符
+for i in list:  #列表循环，遍历列表中每个元素
+for line in file #文件循环，遍历每一行
 ```
 
-## while-loop
-
+## while-loop 无限循环
+```mermaid
+graph TD
+A[条件] --> B{语句块};
+B --条件未满足--> A;
+B --条件满足--> C[结束循环]
+```
 ## try-except
 ```python
 try:
@@ -177,9 +189,9 @@ graph TD
     B -- 异常2 --> D[不执行try,</br>执行except2];
     B -- 无异常 --> E[执行try];
     E --> F[else];
-    C --> G[finally]
-    D --> G[finally]
-    F --> G[finally]
+    C --> G[finally];
+    D --> G[finally];
+    F --> G[finally];
     G --> H[传递结果]
 ```
 内置异常类型：  
