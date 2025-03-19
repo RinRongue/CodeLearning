@@ -18,6 +18,7 @@
 - [官方库](#官方库)
   - [time库](#time库)
   - [turtle库](#turtle库)
+  - [random库](#random库)
   - [secrets库](#secrets库)
      
 
@@ -156,6 +157,7 @@ match a:
 #计数循环
 for i in range(M,N,K): #从M到N-1，以K为步长
     <>
+[else:] #没有break则执行此代码（不是continue）
 ```
 ```python
 for c in s:  #字符串循环，遍历字符串中每一个字符
@@ -169,6 +171,7 @@ for line in file #文件循环，遍历每一行
 ```python
 while <条件>：
     <语句块>
+[else:] #没有break则执行此代码（不是continue）
 ```
 ```mermaid
 graph TD
@@ -246,7 +249,9 @@ except KeyboardInterrupt:
 ```
 ## 循环保留控制字
 break 跳出并结束**当前整个**循环  
-continue 跳出**当次**循环并继续下次循环
+continue 跳出**当次**循环并继续下次循环  
+pass 占位符，不执行任何操作
+
 # 自定义函数
 ```python
 def factor(a):
@@ -290,6 +295,21 @@ turtle.right(angle)
 turtle.done()
 ```
 ![](/PythonDCIM/turtle0.jpg)
+
+## random库
+```python
+#基本随机数函数
+random.seed() #初始化随机数种子，不调用则默认为当前系统时间
+random.random() #生成[0.0,1.0)之间的double数
+
+#扩展随机数函数
+random.randint(a,b) #生成[a,b]之间的int
+random.randrange(m,n[,k]) #生成[m,n)之间以k为步长的int; random.randrange(10,100，10) > 20
+random.getrandbits(k) #生成k bit长的随机int 16>37885
+random.uniform(a,b) #生成[a,b]之间的随机double
+random.choice(seq) #从序列中随机选取一个元素
+random.shuffle(seq) #将seq中元素随机排列，返回打乱后的序列
+```
 
 ## secrets库
 ```python
