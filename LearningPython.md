@@ -151,8 +151,73 @@ for :
 ## while-loop
 
 ## try-except
+```python
+try:
+<0>
+except <异常类型1>:
+<1>
+except (a,b): #捕获多个异常
+<2>
+else:
+<3>
+finally:
+<4>
 
+```
+```mermaid
+graph TD
+    A[input] --> B{try};
+    B -- 异常1 --> C[不执行try,</br>执行except1];
+    B -- 异常2 --> D[不执行try,</br>执行except2];
+    B -- 无异常 --> E[执行try];
+    E --> F[else];
+    C --> G[finally]
+    D --> G[finally]
+    F --> G[finally]
+    G --> H[传递结果]
+```
+内置异常类型：  
+Exception	所有内置异常的基类（不包括 SystemExit、KeyboardInterrupt 等）  
+BaseException	所有异常的基类（包括 SystemExit 和 KeyboardInterrupt，但一般不直接使用）  
+TypeError	发生类型错误，例如对整数调用字符串方法  
+ValueError	传递无效参数，例如 int("abc")  
+IndexError	索引超出范围，例如 lst[10]（列表越界）  
+KeyError	字典中找不到指定键，例如 dict['missing_key']  
+NameError	变量未定义，例如 print(undeclared_variable)  
+AttributeError	访问对象不存在的属性，例如 None.some_method()  
+ImportError	导入模块失败，例如 import non_existent_module  
+ModuleNotFoundError	找不到模块（ImportError 的子类）  
+FileNotFoundError	试图打开一个不存在的文件  
+OSError	操作系统相关错误，例如文件权限问题  
+ZeroDivisionError	除数为零，例如 1 / 0  
+ArithmeticError	所有数学计算错误的基类，例如 ZeroDivisionError  
+AssertionError	assert 语句失败  
+EOFError	input() 在没有输入时触发（如 Ctrl+D 或 Ctrl+Z）  
+StopIteration	迭代器遍历结束时触发  
+GeneratorExit	关闭生成器时触发  
+KeyboardInterrupt	用户手动中断（如 Ctrl+C）  
+MemoryError	内存不足时触发  
+RecursionError	递归调用超过最大深度  
+  
+使用Exception自定义异常：
+```python
+class MyCustomError(Exception):
+    pass #异常语句块
 
+try:
+    raise MyCustomError("自定义错误")
+except MyCustomError as e:
+    print(f"捕获到异常: {e}")
+```
+
+异常发生后允许用户使用`ctrl+c`终止程序
+```python
+try:
+    pass
+except KeyboardInterrupt:
+    print("程序被用户中断")
+    raise  # 重新抛出 KeyboardInterrupt
+```
 
 # 自定义函数
 ```python
