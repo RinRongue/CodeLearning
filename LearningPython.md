@@ -1,4 +1,4 @@
-- [输入,定义,输出](#输入,定义,输出)
+- [输入,定义,输出](#输入-定义-输出)
 - [字符串](#字符串)
   - [索引和切片](#索引和切片)
   - [转义符](#转义符)
@@ -10,9 +10,10 @@
 - [循环和分支结构](#循环和分支结构)
   - [if loop](#if-loop)
     - [match-case](#match-case)
-  - [for loop](#for-loop 遍历循环)
-  - [while loop](#while-loop 无限循环)
+  - [for loop](#for-loop)
+  - [while loop](#while-loop)
   - [try-except](#try-except)
+  - [循环保留控制字](#循环保留控制字)
 - [自定义函数](#自定义函数)
 - [官方库](#官方库)
   - [time库](#time库)
@@ -20,7 +21,7 @@
   - [secrets库](#secrets库)
      
 
-# 输入,定义,输出
+# 输入-定义-输出
 `a, b = input('请输入两个值，用逗号分隔：') #一次输入多个值并用逗号分隔`  
 `a, b = input("请输入两个值，用空格分隔: ").split() #一次输入多个值并用空格分隔`  
 `x, y = map(int, input("请输入两个整数: ").split()) #一次输入多个值并用空格分隔且格式化为整数`  
@@ -149,7 +150,8 @@ match a:
     ...
 #用于模式匹配 a与b,c的关系
 ```
-## for-loop 遍历循环
+## for-loop
+遍历循环  
 ```python
 #计数循环
 for i in range(M,N,K): #从M到N-1，以K为步长
@@ -161,12 +163,18 @@ for i in list:  #列表循环，遍历列表中每个元素
 for line in file #文件循环，遍历每一行
 ```
 
-## while-loop 无限循环
+## while-loop
+
+无限循环  
+```python
+while <条件>：
+    <语句块>
+```
 ```mermaid
 graph TD
 A[条件] --> B{语句块};
-B --条件未满足--> A;
-B --条件满足--> C[结束循环]
+B --条件满足</br>True--> A;
+B --条件不满足</br>False--> C[结束循环]
 ```
 ## try-except
 ```python
@@ -236,7 +244,9 @@ except KeyboardInterrupt:
     print("程序被用户中断")
     raise  # 重新抛出 KeyboardInterrupt
 ```
-
+## 循环保留控制字
+break 跳出并结束**当前整个**循环  
+continue 跳出**当次**循环并继续下次循环
 # 自定义函数
 ```python
 def factor(a):
