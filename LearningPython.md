@@ -286,6 +286,7 @@ turtle.pencolor(a,b,c) #可用整数或小数或名称
 turtle.colormode(mode) #mode=1.0 或 255  
 turtle.penup()  
 turtle.pendown()
+turtle.clear() #清空画面
 turtle.fd(len) #往前爬len像素
 turtle.dot(r,'color') #原地画点
 turtle.goto(x,y)  
