@@ -294,6 +294,7 @@ turtle.seth(angle) #逆时针
 turtle.left(angle) #往左转  
 turtle.right(angle)
 turtle.speed() #速度，越大越快，0最快
+turtle.write(format, font=("MIcrosoft YaHei UI", 12, "normal")) #写字乌龟
 turtle.done()
 ```
 ![](/PythonDCIM/turtle0.jpg)
