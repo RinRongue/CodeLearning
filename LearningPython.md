@@ -286,12 +286,14 @@ turtle.pencolor(a,b,c) #可用整数或小数或名称
 turtle.colormode(mode) #mode=1.0 或 255  
 turtle.penup()  
 turtle.pendown()
-turtle.fd(len) #往前爬len像素  
+turtle.fd(len) #往前爬len像素
+turtle.dot(r,'color') #原地画点
 turtle.goto(x,y)  
 turtle.circle(len,angle)  #画angle度直径len的圆  
 turtle.seth(angle) #逆时针  
 turtle.left(angle) #往左转  
-turtle.right(angle)  
+turtle.right(angle)
+turtle.speed() #速度，越大越快，0最快
 turtle.done()
 ```
 ![](/PythonDCIM/turtle0.jpg)
