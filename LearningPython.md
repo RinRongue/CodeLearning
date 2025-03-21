@@ -14,7 +14,9 @@
   - [while loop](#while-loop)
   - [try-except](#try-except)
   - [循环保留控制字](#循环保留控制字)
-- [自定义函数](#自定义函数)
+- [函数的定义与使用](#函数的定义与使用)
+  - [局部变量和全局变量](#局部变量和全局变量)
+  - [lambda函数](#lambda函数)
 - [官方库](#官方库)
   - [time库](#time库)
   - [turtle库](#turtle库)
@@ -252,12 +254,84 @@ break 跳出并结束**当前整个**循环
 continue 跳出**当次**循环并继续下次循环  
 pass 占位符，不执行任何操作
 
-# 自定义函数
+# 函数的定义与使用  
 ```python
-def factor(a):
-  ...
-return factor
+#函数的定义
+def <函数名>():
+  <函数体>
+  return <返回值>
+
+#没有参数和返回值的函数
+def print():
+  print('')
+  [return]
+
+#可选参数必须在必选参数之后，赋值成为可选参数
+def <函数名>(<必选参数>,<可选参数=a>):
+  <函数体>
+  return <返回值>
+
+#可变参数必须在必选参数后，用*<字母>表示
+def <函数名>(<必选参数>,*b):
+  <函数体>
+  return <返回值>
+
+def minus(a,*b): #使a减去不确定数量的参数b
+    r=a
+    for i in b:
+        r-=i
+    return r
+print(minus(10,1,2,3)) #4
+
+#按位置方式和按名称方式传递函数
+def factor(a,b):
+
+factor(1,2)
+factor(b=2,a=1)
+
+#多个返回值为元组类型
+def：
+  return a,b,c > (a,b,c)
+
+#使返回值不为元组类型的妙妙小方法
+def factor(a,b,c):
+  d=a;e=b;f=c
+  return d,e,f
+
+g,h,i=factor(1,2,3)
+print(g) #1
+print(h) #2
+print(i) #3
 ```
+## 局部变量和全局变量
+ 
+怪谈1：基本数据类型，无论是否重名，局部变量与全局变量不同
+使用global在函数内部使用全局变量   
+```
+x=1
+def func():
+  global x
+  <省略>
+```
+怪谈2：局部变量为组合数据类型且未创建，等同于全局变量，若组合数据类型被创建，则为局部变量  
+```
+ls = ['a','b']
+def func(a):
+    ls.append(a)
+    return
+func('c')
+print(ls)  # ['a', 'b', 'c']
+```
+
+## lambda函数
+常用于特定函数或方法的参数  
+`<函数名>=lambda [<参数>]: <表达式>`
+```
+f=lambda x,y : x+y
+f(1,2) #3
+```
+lambda函数固定使用方式  
+
 # 官方库
 
 ## time库
