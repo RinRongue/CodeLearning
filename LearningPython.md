@@ -23,6 +23,9 @@
   - [turtle库](#turtle库)
   - [random库](#random库)
   - [secrets库](#secrets库)
+- [第三方库](#第三方库)
+  - [pip的使用](#pip的使用)
+  - [PyInstaller库](#PyInstaller库)
      
 
 # 输入-定义-输出
@@ -345,6 +348,7 @@ def fact(a):
         return a * fact(a - 1) # 递归调用自身
 print(fact(5)) # 120
 ```
+默认递归深度为1000，可以使用`sys.setrecursionlimit()`增加递归深度  
 
 # 官方库
 
@@ -418,3 +422,47 @@ random_hex = secrets.token_hex(16)  # 生成 16 字节的随机十六进制字�
 # 生成一个随机URL安全字符串
 random_urlsafe = secrets.token_urlsafe(16)
 ```
+
+# 第三方库
+
+## pip的使用
+```
+pip install 库名    # 安装库（最新版本）
+pip install 库名==版本号    # 安装指定版本的库，例如 pip install numpy==1.21.0
+pip install 库名>=版本号    # 安装大于等于某个版本的库，例如 pip install numpy>=1.21.0
+pip install -r requirements.txt    # 从 requirements.txt 批量安装
+
+pip uninstall 库名    # 卸载库
+pip install --upgrade 库名    # 更新库到最新版本
+
+pip list    # 查看所有已安装的库
+pip show 库名    # 查询某个库的详细信息（版本、安装路径等），例如 pip show numpy
+pip list --outdated    # 检查是否有可更新的库
+
+pip freeze > requirements.txt    # 导出当前环境的所有依赖到 requirements.txt
+pip install -r requirements.txt    # 从 requirements.txt 还原环境（批量安装依赖）
+
+pip cache purge    # 清理 pip 缓存
+
+pip install 库名 -i https://pypi.tuna.tsinghua.edu.cn/simple    # 使用清华 TUNA 镜像加速安装
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple    # 设置全局镜像源（清华 TUNA）
+
+pip --version    # 查看 pip 版本
+pip install --upgrade pip    # 升级 pip 到最新版本
+pip help    # 查看 pip 帮助信息
+```
+
+## PyInstaller库
+在命令行下
+```cmd
+pyinstaller -F <文件名.py> #在dist目录下生成同名可执行文件
+```
+|参数|描述|
+|:------:|:------:|
+|-h|查看帮助|
+|--clean|清理打包过程中的临时文件|
+|-D,--onedir|默认值，生成dist文件夹|
+|-F,--onefile|只在dist下生成独立的打包文件|
+|-i <图标.ico>|指定打包程序的图标文件|
+
+
