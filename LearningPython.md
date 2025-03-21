@@ -27,8 +27,7 @@
   - [secrets库](#secrets库)
 - [第三方库](#第三方库)
   - [pip的使用](#pip的使用)
-  - [PyInstaller库](#PyInstaller库)
-     
+  - [PyInstaller库](#pyInstaller库)
 
 # 输入-定义-输出
 `a, b = input('请输入两个值，用逗号分隔：') #一次输入多个值并用逗号分隔`  
@@ -72,15 +71,29 @@ print("{:E}".format(3.14)) > 3.140000E+00
 print("{:f}".format(3.14)) > 3.140000
 print("{:%}".format(3.14)) > 314.000000%
 ```
+| : 引导符号 | <填充>      | <对齐>        | <宽度>     | <,>       | <.精度>        | <类型>       |
+|------------|------------|--------------|------------|-----------|--------------|-------------|
+|            | 用于填充的单个字符 | < 左对齐     | 槽设定的输出宽度 | 数字的千位分隔符 | 浮点数小数精度或字符串最大输出长度 | 整数类型：b, c, d, o, x, X |
+|            |            | > 右对齐     |            |           |              | 浮点数类型：e, E, f, % |
+|            |            | ^ 居中对齐   |            |           |              |             |
+
+示例代码：
+```python
+>>> "{0:=^20}".format("PYTHON")
+'======PYTHON======'
+
+>>> "{0:*^20}".format("BIT")
+'*******BIT*******'
+```
 ![](/PythonDCIM/string0.png)
-![](/PythonDCIM/string1.png)
-![](/PythonDCIM/string2.png)
+
 ## 字符串操作符
 ```python
 x+y #连接xy
 x*n ; n*x #复制n次x
 x in s #判断x是否为s子串，返回布尔值
 ```
+
 ## 字符串处理函数
 ```python
 len(x) #返回x长度
@@ -473,9 +486,9 @@ pip install --upgrade pip    # 升级 pip 到最新版本
 pip help    # 查看 pip 帮助信息
 ```
 
-## PyInstaller库
-在命令行下
-```cmd
+## pyInstaller库
+在命令行下  
+```
 pyinstaller -F <文件名.py> #在dist目录下生成同名可执行文件
 ```
 |参数|描述|
@@ -485,5 +498,4 @@ pyinstaller -F <文件名.py> #在dist目录下生成同名可执行文件
 |-D,--onedir|默认值，生成dist文件夹|
 |-F,--onefile|只在dist下生成独立的打包文件|
 |-i <图标.ico>|指定打包程序的图标文件|
-
 
