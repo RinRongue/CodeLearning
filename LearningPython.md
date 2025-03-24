@@ -90,6 +90,7 @@ print("{:%}".format(3.14)) > 314.000000%
 ![](/PythonDCIM/string0.png)
 
 ## 字符串操作符
+也可用于其它序列类型  
 ```python
 x+y #连接xy
 x*n ; n*x #复制n次x
@@ -112,15 +113,15 @@ oct(x) #十进制整数转8进制字符串
 ## 字符串处理方法
 ```python
 #str用于表示字符串
-str.lower() #str小写 'AbC' > 'abc'
+str.lower() #str小写    >'AbC' > 'abc'
 str.upper() #str大写
 
-str.split(sep=None) #按照sep分隔str 'A,BC:D'.split(':') >['A,BC','D']
-str.count(sub) #返回str出现sub的次数
-str.replace(old,new) #'ABC'.replace('A','a') > 'aBC'
-str.strip(chars) #去除两侧的chars列出的字符 'ABCDCDCBA'.strip('ABC') > 'DCD'
-str.join(iter) #在str除最后一个元素外每个元素后加一个iter，用于分隔 'abc'.join('+') > 'a+b+c'
-str.center(width[,fillchar]) #在width宽度中居中，两侧用fillchar填充
+str.split(sep=None)    #按照sep分隔str 'A,BC:D'.split(':') >['A,BC','D']
+str.count(sub)    #返回str出现sub的次数
+str.replace(old,new)    #'ABC'.replace('A','a') > 'aBC'
+str.strip(chars)    #去除两侧的chars列出的字符 'ABCDCDCBA'.strip('ABC') > 'DCD'
+str.join(iter)    #在str除最后一个元素外每个元素后加一个iter，用于分隔 'abc'.join('+') > 'a+b+c'
+str.center(width[,fillchar])    #在width宽度中居中，两侧用fillchar填充
 ```
 
 # 组合数据类型
