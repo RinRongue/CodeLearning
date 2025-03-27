@@ -11,7 +11,7 @@
   - [元组类型](#元组类型)
   - [列表类型](#列表类型)
   - [字典类型](#字典类型)
-    - [list.sort()和sorted()区别](#listsort-与-sorted-区别)
+    - [list.sort()和sorted()区别](#list\.sort-与-sorted-区别)
 - [数据运算](#数据运算)
 - [循环和分支结构](#循环和分支结构)
   - [if loop](#if-loop)
