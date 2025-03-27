@@ -11,6 +11,7 @@
   - [元组类型](#元组类型)
   - [列表类型](#列表类型)
   - [字典类型](#字典类型)
+  - [一维和二维数据格式化](#一维和二维数据格式化)
     - [list.sort()和sorted()区别](#listsort和sorted区别)
 - [数据运算](#数据运算)
 - [循环和分支结构](#循环和分支结构)
@@ -256,6 +257,9 @@ a[<键1>] >>> <值1>
 | d.popitem()| 随机从字典d中取出一个键值对，以元组形式返回|
 | d.clear()| 删除所有的键值对|
 | len(d)| 返回字典d中元素的个数|
+
+## 一维和二维数据格式化
+
 
 ### listsort和sorted区别
 | 特性| list.sort()| sorted()|
@@ -542,7 +546,8 @@ print(fact(5)) # 120
 # 文件的使用
 ```
 #打开文本文件
-<文件句柄>=open(<文本路径>,<打开方式>)
+<文件句柄>=open(<文本路径>,<打开方式>,<编码形式>)
+  #hamlet=open(filepath, 'r', encoding='utf-8')
 
   #路径：C:/files/a.txt 或 C:\\files\\a.txt
 ```
@@ -560,12 +565,39 @@ print(fact(5)) # 120
 a.read(size)
 a.readline(size)
 a.readlines(hint)
+```
+|操作方法|描述|
+|---|---|
+|<f>.read(size=-1)|读入全部内容,如果给出参数,读入前size长度<br>>>>s=f.read(2)<br>中国|
+|<f>.readline(size=-1)|读入一行内容,如果给出参数,读入该行前size长度<br>>>>s=f.readline()<br>中国是一个伟大的国家!|
+|<f>.readlines(hint=-1)|读入文件所有行,以每行为元素形成列表<br>如果给出参数,读入前hint行<br>>>>s=f.readlines()<br>['中国是一个伟大的国家!']|
+```
+#逐行遍历方法1,一次读入,逐行处理
+fo = open("a.txt",'r')
+for line in fo.readlines():
+  print(line)
+fo.close
 
+#逐行遍历方法2，逐行读入,逐行处理
+fo = open("a.txt",'r')
+for line in fo:
+  print(line)
+fo.close
+```
+
+```
 #写文件
 a.write(s)
 a.writelines(lines)
 a.seek(offset)
+```
+|操作方法|描述|
+|---|---|
+|<f>.write(s)|向文件写入一个字符串或字节流<br>>>>f.write("中国是一个伟大的国家!")|
+|<f>.writelines(lines)|将一个元素全为字符串的列表写入文件<br>>>>ls=["中国","法国","美国"]<br>>>>f.writelines(ls)<br>中国法国美国|
+|<f>.seek(offset)|改变当前文件操作指针的位置,offset含义如下:<br>0-文件开头;1-当前位置;2-文件结尾<br>>>>f.seek(0) #回到文件开头|
 
+```
 #关闭文本文件
 a.close()
 ```
