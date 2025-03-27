@@ -164,7 +164,7 @@ S.add(x)    #如果x不在集合S中，将x增加到S
 S.discard(x)    #移除S中元素x，如果x不在集合S中，不报错  
 S.remove(x)    #移除S中元素x，如果x不在集合S中，产生KeyError异常
 S.clear()    #移除S中所有元素
-S.pop()    #随即返回S中的一个元素，更新S（删除去除的元素），若S为空产生KeyError异常
+S.pop()    #随机返回S中的一个元素，更新S（删除去除的元素），若S为空产生KeyError异常
 S.copy()    #返回集合 S 的一个副本  
 len(S)    #返回集合 S 的元素个数  
 x in S    #判断 S 中元素 x，x 在集合 S 中，返回 True，否则返回 False  
