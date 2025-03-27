@@ -540,6 +540,35 @@ print(fact(5)) # 120
 默认递归深度为1000，可以使用`sys.setrecursionlimit()`增加递归深度  
 
 # 文件的使用
+```
+#打开文本文件
+<文件句柄>=open(<文本路径>,<打开方式>)
+
+  #路径：C:/files/a.txt 或 C:\\files\\a.txt
+```
+|文件的打开模式|描述|
+|---|---|
+|'r'|只读模式,默认值,如果文件不存在,返回FileNotFoundError|
+|'w'|覆盖写模式,文件不存在则创建,存在则完全覆盖|
+|'x'|创建写模式,文件不存在则创建,存在则返回FileExistsError|
+|'a'|追加写模式,文件不存在则创建,存在则在文件最后追加内容|
+|'b'|二进制文件模式，可单独使用(只读)或放在上面四种类型后面 eg：wb|
+|'t'|文本文件模式,默认值，可单独使用(只读)或放在上面四种类型后面 eg：wt|
+|'+'|与r/w/x/a一同使用,在原功能基础上增加同时读写功能|
+```
+#读文件
+a.read(size)
+a.readline(size)
+a.readlines(hint)
+
+#写文件
+a.write(s)
+a.writelines(lines)
+a.seek(offset)
+
+#关闭文本文件
+a.close()
+```
 
 
 # 官方库
