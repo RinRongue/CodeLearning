@@ -548,8 +548,12 @@ print(fact(5)) # 120
 #打开文本文件
 <文件句柄>=open(<文本路径>,<打开方式>,<编码形式>)
   #hamlet=open(filepath, 'r', encoding='utf-8')
-
   #路径：C:/files/a.txt 或 C:\\files\\a.txt
+
+with open(...) as f:  #在 with 代码块执行完毕后 自动关闭文件，不需要手动调用 f.close()
+with open("example.txt", "r", encoding="utf-8") as f:
+    content = f.read()  # 读取整个文件内容
+print(content)  # 文件已经关闭，但仍然可以使用变量 content
 ```
 |文件的打开模式|描述|
 |---|---|
