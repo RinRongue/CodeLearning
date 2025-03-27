@@ -11,7 +11,7 @@
   - [元组类型](#元组类型)
   - [列表类型](#列表类型)
   - [字典类型](#字典类型)
-    - [list.sort()和sorted()区别](#list\.sort-和sorted-区别)
+    - [list.sort()和sorted()区别](#listsort和sorted区别)
 - [数据运算](#数据运算)
 - [循环和分支结构](#循环和分支结构)
   - [if loop](#if-loop)
@@ -257,7 +257,7 @@ a[<键1>] >>> <值1>
 | d.clear()| 删除所有的键值对|
 | len(d)| 返回字典d中元素的个数|
 
-### list.sort()和sorted()区别
+### listsort和sorted区别
 | 特性| list.sort()| sorted()|
 |---|---|---|
 | 修改原始列表|是，原地修改列表|否，返回一个新的排序后的列表|
