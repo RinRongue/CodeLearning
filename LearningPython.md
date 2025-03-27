@@ -11,6 +11,7 @@
   - [元组类型](#元组类型)
   - [列表类型](#列表类型)
   - [字典类型](#字典类型)
+    - [list.sort()和sorted()区别](#list.sort()和sorted())
 - [数据运算](#数据运算)
 - [循环和分支结构](#循环和分支结构)
   - [if loop](#if-loop)
@@ -23,6 +24,7 @@
   - [局部变量和全局变量](#局部变量和全局变量)
   - [lambda函数](#lambda函数)
   - [递归](#递归)
+- [文件的使用](#文件的使用)
 - [官方库](#官方库)
   - [time库](#time库)
   - [turtle库](#turtle库)
@@ -254,6 +256,42 @@ a[<键1>] >>> <值1>
 | d.popitem()| 随机从字典d中取出一个键值对，以元组形式返回|
 | d.clear()| 删除所有的键值对|
 | len(d)| 返回字典d中元素的个数|
+
+### list.sort()和sorted()
+| 特性| list.sort()| sorted()|
+|---|---|---|
+| 修改原始列表|是，原地修改列表|否，返回一个新的排序后的列表|
+| 适用对象|仅适用于列表| 适用于任何可迭代对象（列表、元组、字符串等）|
+| 返回值| None| 新的排序后的列表|
+| 效率| 通常更快，因为是原地操作| 相对较慢，因为需要创建新列表|
+| 灵活性| 相对较低，只能修改列表本身| 较高，不影响原始数据，适用于多种场景|
+| 使用场景| 需要直接修改原始列表且不关心原始顺序时| 需要保留原始列表或对其他可迭代对象排序时|
+```
+#降序排序
+list.sort(reverse=True)
+a=sorted(list, reverse=True)
+
+#自定义排序(以长度排序)
+list.sort(key=len)
+a=sorted(list, key=len)
+
+#自定义对象属性
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __repr__(self):
+        return f"Person(name='{self.name}', age={self.age})"
+
+people = [Person("Alice", 25), Person("Bob", 20), Person("Charlie", 30)]
+people.sort(key=lambda person: person.age)
+print(people)  # 输出：[Person(name='Bob', age=20), Person(name='Alice', age=25), Person(name='Charlie', age=30)]
+
+#根据元组的第二个元素排序
+list.sort(key=lambda x: x[1])
+```
+
 
 
 # 数据运算
@@ -500,6 +538,9 @@ def fact(a):
 print(fact(5)) # 120
 ```
 默认递归深度为1000，可以使用`sys.setrecursionlimit()`增加递归深度  
+
+# 文件的使用
+
 
 # 官方库
 
