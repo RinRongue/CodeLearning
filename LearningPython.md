@@ -29,6 +29,7 @@
   - [递归](#递归)
 - [文件的使用](#文件的使用)
 - [官方库](#官方库)
+  - [os库](#os库)
   - [time库](#time库)
   - [turtle库](#turtle库)
   - [random库](#random库)
@@ -38,6 +39,7 @@
   - [jieba库](#jieba库)
   - [PyInstaller库](#pyInstaller库)
   - [wordcloud库](#wordcloud库)
+- [python程序设计方法](#python程序设计方法)
 
 # 输入-定义-输出
 `a, b = input('请输入两个值，用逗号分隔：') #一次输入多个值并用逗号分隔`  
@@ -261,7 +263,7 @@ a[<键1>] >>> <值1>
 | d.clear()| 删除所有的键值对|
 | len(d)| 返回字典d中元素的个数|
 
-## 一维和多维数据格式化
+## 一维和二维数据格式化
 |一维数据|二维数据|多维数据|
 |---|---|---|
 |由对等关系的有序或无序数据组成<br>采用线性方式堆积|由多个一维数据构成<br>是多个一维数据组合形式|在前面的类型扩展新的维度形成|
@@ -664,6 +666,37 @@ a.close()
 
 
 # 官方库
+# os库
+1. os.path子库，处理文件路径及信息
+
+|函数|描述|
+|---|---|
+|os.path.abspath(path)|返回path在当前系统中的绝对路径<br>>>>os.path.abspath("file.txt")<br>'C:\\Users\\TianSong\\Python36-32\\file.txt'|
+|os.path.normpath(path)|归一化path的表示形式,统一用\\分隔路径<br>>>>os.path.normpath("D://PYE//file.txt")<br>'D:\\PYE\\file.txt'|
+|os.path.relpath(path)|返回当前程序与文件之间的相对路径(relative path)<br>>>>os.path.relpath("C://PYE//file.txt")<br>'..\\..\\..\\..\\..\\..\\..\\PYE\\file.txt'|
+|os.path.dirname(path)|返回path中的目录名称<br>>>>os.path.dirname("D://PYE//file.txt")<br>'D://PYE'|
+|os.path.basename(path)|返回path中最后的文件名称<br>>>>os.path.basename("D://PYE//file.txt")<br>'file.txt'|
+|os.path.join(path,*paths)|组合path与paths,返回一个路径字符串<br>>>>os.path.join("D:/","PYE/file.txt")<br>'D:/PYE/file.txt'|
+|os.path.exists(path)|判断path对应文件或目录是否存在,返回True或False<br>>>>os.path.exists("D://PYE//file.txt")<br>False|
+|os.path.isfile(path)|判断path所对应是否为已存在的文件,返回True或False<br>>>>os.path.isfile("D://PYE//file.txt")<br>True|
+|os.path.isdir(path)|判断path所对应是否为已存在的目录,返回True或False<br>>>>os.path.isdir("D://PYE//file.txt")<br>False|
+|os.path.getatime(path)|返回path对应文件或目录上一次的访问时间<br>>>>os.path.getatime("D:/PYE/file.txt")<br>1518356633.7551725|
+|os.path.getmtime(path)|返回path对应文件或目录最近一次的修改时间<br>>>>os.path.getmtime("D:/PYE/file.txt")<br>1518356633.7551725|
+|os.path.getctime(path)|返回path对应文件或目录的创建时间<br>>>>time.ctime(os.path.getctime("D:/PYE/file.txt"))<br>'Sun Feb 11 21:43:53 2018'|
+|os.path.getsize(path)|返回path对应文件的大小,以字节为单位<br>>>>os.path.getsize("D:/PYE/file.txt")<br>180768|
+
+2. os.system，处理进程管理，可以执行command命令  
+`os.system(<命令行指令>)`  
+
+3. 环境参数
+
+|函数|描述|
+|---|---|
+|os.chdir(path)|修改当前程序操作的路径<br>>>>os.chdir("D:")|
+|os.getcwd()|返回程序的当前路径<br>>>>os.getcwd()<br>'D:\\'|
+|os.getlogin()|获得当前系统登录用户名<br>>>>os.getlogin()<br>'TianSong'|
+|os.cpu_count()|获得当前系统的CPU数量<br>>>>os.cpu_count()<br>8|
+|os.urandom(n)|获得n个字节长度的随机字符串,通常用于加解密运算<br>>>>os.urandom(10)<br>b'7\\xbe\\xf2!\\xc1=\\x01gL\\xb3'|
 
 ## time库
 ```python
@@ -789,8 +822,6 @@ pip help    # 查看 pip 帮助信息
 |jieba.lcut_for_search(s)|搜索引擎模式，返回一个列表类型的分词结果，存在冗余</br>>>>jieba.lcut_for_search('中华人民共和国')</br>['中华', '华人', '人民', '共和', '共和国', '中华人民共和国']|
 |jieba.add_word(w)|向分词词典中增加新词w|
 
-
-
 ## pyInstaller库
 在命令行下  
 ```
@@ -806,4 +837,30 @@ pyinstaller -F <文件名.py> #在dist目录下生成同名可执行文件
 
 ## wordcloud库
 词云展示库  
-![](/PythonDCIM/worldcloud0.png)
+![](/PythonDCIM/worldcloud0.png)  
+w=world.WorldCloud() #注意大小写
+|方法|描述|
+|---|---|
+|w.generate(txt)|向WordCloud对象w中加载文本txt,<br>>>>w.generate("Python and WordCloud")|
+|w.to_file(filename)|将词云输出为图像文件,.png或.jpg格式<br>>>>w.to_file("outfile.png")|
+|width|指定词云对象生成图片的宽度,默认400像素<br>>>>w=wordcloud.WordCloud(width=600)|
+|height|指定词云对象生成图片的高度,默认200像素<br>>>>w=wordcloud.WordCloud(height=400)|
+|min_font_size|指定词云中字体的最小字号,默认4号<br>>>>w=wordcloud.WordCloud(min_font_size=10)|
+|max_font_size|指定词云中字体的最大字号,根据高度自动调节<br>>>>w=wordcloud.WordCloud(max_font_size=20)|
+|font_step|指定词云中字体字号的步进间隔,默认为1<br>>>>w=wordcloud.WordCloud(font_step=2)|
+|font_path|指定字体文件的路径,默认None<br>>>>w=wordcloud.WordCloud(font_path="msyh.ttc")|
+|max_words|指定词云显示的最大单词数量,默认200<br>>>>w=wordcloud.WordCloud(max_words=20)|
+|stop_words|指定词云的排除词列表,即不显示的单词列表<br>>>>w=wordcloud.WordCloud(stop_words={"Python"})|
+|mask|指定词云形状,默认为长方形,需要引用imread()函数<br>>>>from scipy.misc import imread<br>>>>mk=imread("pic.png")<br>>>>w=wordcloud.WordCloud(mask=mk)|
+|background_color|指定词云图片的背景颜色,默认为黑色<br>>>>w=wordcloud.WordCloud(background_color="white")|
+
+# python程序设计方法
+~~自顶向下：适合解决复杂问题的思维方法~~  
+~~1. 将一个总问题表达为多个小问题组成的形式
+2. 使用同样方法进一步分解小问题
+3. 用计算机简单明了的解决 小问题~~
+  
+~~自顶向上：逐步组件复杂系统的有效测试方法~~  
+~~1. 分单元测试，逐步组装
+2. 按照自顶向下相反的路径操作
+3. 直至系统各部分以组装的思路都经过测试和验证~~
