@@ -459,7 +459,19 @@ for c in s:  #字符串循环，遍历字符串中每一个字符
 for i in list:  #列表循环，遍历列表中每个元素
 for line in file #文件循环，遍历每一行
 ```
+enumerate() 用于在循环中同时获取索引和值  
+```
+fruits = ['苹果', '香蕉', '橘子']
+for i, fruit in enumerate(fruits):
+    print(i, fruit)
+#0 苹果
+ 1 香蕉
+ 2 橘子
 
+#等价于
+for i in range(len(fruits)):
+    print(i, fruits[i])
+```
 ## while-loop
 
 无限循环  
